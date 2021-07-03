@@ -33,3 +33,14 @@
   margin: 40px auto;
   padding: 20px;
 }
+
+.nav-link {
+  border-bottom: 1px solid #ddd;
+  border-color: blue;
+}
+
+.nav {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
