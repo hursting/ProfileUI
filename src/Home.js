@@ -1,12 +1,18 @@
+import ProfileList from 'components/ProfileList';
+import { useEffect, useState } from 'react';
+
 const Home = () => {
-    // const { error, isPending, data: blogs } = useFetch('http://localhost:8000/blogs')
-  
+  const [profiles, setProfiles] = useState([
+    { id: 1, worktype: "Drainage", body: "profile 1",manager:"tom" },
+    { id: 2, worktype: "Trenching", body: "profile 1",manager:"tom" },
+    { id: 3, worktype: "Boring", body: "thi", manager:"tom" },
+  ])
+  useEffect(() => {
+    console.log('Home has been refreshed');
+  })
     return (
       <div className="home">
-Work in progress
-        {/* { error && <div>{ error }</div> }
-        { isPending && <div>Loading...</div> } */}
-        {/* { blogs && <BlogList blogs={blogs} /> } */}
+        <ProfileList profiles={profiles} title="All Profiles" /> 
       </div>
     );
   }
