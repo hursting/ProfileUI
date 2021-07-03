@@ -1,13 +1,25 @@
+// import Navbar from './Navbar';
+import Home from 'Home';
+import Navbar from 'components/NavBar';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+// import Create from './Create';
+// import BlogDetails from './BlogDetails';
+// import NotFound from './NotFound';
 
 function App() {
   return (
-    <div className="App">
-      <div className ="content">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>        
+    <Router>
+      <div className="App">
+        <Navbar />
+        <div className="content">
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>           
+          </Switch>
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
 
