@@ -15,6 +15,9 @@ function App() {
           <Switch>
             <Route exact path="/">
               <Home />
+            </Route>
+            <Route path="/create">
+              <Create />
             </Route>           
           </Switch>
         </div>
