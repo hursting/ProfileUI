@@ -1,5 +1,6 @@
 import ProfileList from 'components/ProfileList';
 import { useEffect, useState } from 'react';
+import strings from 'strings';
 
 const Home = () => {
   const [profiles, setProfiles] = useState([
@@ -10,9 +11,15 @@ const Home = () => {
   useEffect(() => {
     console.log('Home has been refreshed');
   })
+
+  const handleDelete = (id) => {
+    const filteredProfiles = profiles.filter(profile => profile.id !== id);
+    setProfiles(filteredProfiles);
+  }
+
     return (
       <div className="home">
-        <ProfileList profiles={profiles} title="All Profiles" /> 
+        <ProfileList profiles={profiles} title={strings.profile.home.title} handleDelete={ handleDelete} />
       </div>
     );
   }
