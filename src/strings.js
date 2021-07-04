@@ -8,7 +8,7 @@ const strings = {
 
   profile: {
     home: {
-      title: 'Create'
+      title: 'All Profiles'
     }
   }
 }
