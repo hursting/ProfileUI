@@ -1,0 +1,22 @@
+{
+    "profiles": [
+        {
+            "worktype": "Drainage",
+            "body": "Some drainage",
+            "manager": "billy",
+            "id": 1
+        },
+        {
+            "worktype": "trenching",
+            "body": "some trenching",
+            "manager": "tom tom",
+            "id": 2
+        },
+        {
+            "worktype": "surveying",
+            "body": " some body",
+            "manager": "tom tom",
+            "id": 3
+        }
+    ]
+}

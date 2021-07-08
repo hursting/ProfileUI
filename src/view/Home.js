@@ -3,25 +3,25 @@ import { useEffect, useState } from 'react';
 import strings from 'strings';
 
 const Home = () => {
-  const [profiles, setProfiles] = useState([
-    { id: 1, worktype: "Drainage", body: "profile 1",manager:"tom" },
-    { id: 2, worktype: "Trenching", body: "profile 1",manager:"tom" },
-    { id: 3, worktype: "Boring", body: "thi", manager:"tom" },
-  ])
+  const [profiles, setProfiles] = useState(null);
+  const [isPending, setIsPending] = useState(false);
   useEffect(() => {
-    console.log('Home has been refreshed');
-  })
+    fetch('http://localhost:8000/profiles')
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setProfiles(data);
+      });
+  }, []);
 
-  const handleDelete = (id) => {
-    const filteredProfiles = profiles.filter(profile => profile.id !== id);
-    setProfiles(filteredProfiles);
-  }
+  return (
+    <div className="home">
+      {profiles && (
+        <ProfileList profiles={profiles} title={strings.profile.home.title} />
+      )}
+    </div>
+  );
+};
 
-    return (
-      <div className="home">
-        <ProfileList profiles={profiles} title={strings.profile.home.title} handleDelete={ handleDelete} />
-      </div>
-    );
-  }
-   
-  export default Home;
+export default Home;
